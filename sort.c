@@ -1,6 +1,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 int extraMemoryAllocated;
 
@@ -83,11 +84,11 @@ void merge(int arr[], int l, int m, int r) {
     free(R);
 }
 
-void mergeSort(int arr[], int l, int r) {
+void mergeSort(int pData[], int l, int r) {
     if (l < r) {
         int m = l + (r - l) / 2;
-        mergeSort(arr, l, m);
-        mergeSort(arr, m + 1, r);
+        mergeSort(pData, l, m);
+        mergeSort(pData, m + 1, r);
         merge(arr, l, m, r);
     }
 }
